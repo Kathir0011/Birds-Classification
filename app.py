@@ -1,4 +1,3 @@
-
 import torch
 import torchvision
 import os
@@ -33,9 +32,12 @@ def predict(img):
   with torch.inference_mode():
     pred_logits = vit_b16_model(img)
     preds = torch.softmax(pred_logits, dim=1)
-    
-    # Create a prediction label and prediction probability dictionary for each prediction class
-    pred_and_prob_labels = {class_names[i]: preds[0][i].item() for i in range(len(class_names))}
+    if preds[0].max().item() * 100 > 20:
+      # Create a prediction label and prediction probability dictionary for each prediction class
+      pred_and_prob_labels = {class_names[i]: preds[0][i].item() for i in range(len(class_names))}
+
+    else:
+      pred_and_prob_labels = {"Low Accuracy Warning !!! Kindly verify whether the given image is a Bird.": preds[0].max().item()}
 
   return pred_and_prob_labels
 
