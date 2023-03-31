@@ -37,7 +37,7 @@ def predict(img):
       pred_and_prob_labels = {class_names[i]: preds[0][i].item() for i in range(len(class_names))}
 
     else:
-      pred_and_prob_labels = {"Low Accuracy Warning !!! Kindly verify whether the given image is a Bird.": preds[0].max().item()}
+      pred_and_prob_labels = {"Low Accuracy Warning !!! Kindly verify whether the given image is an image of a bird, or upload a clear image.": preds[0].max().item()}
 
   return pred_and_prob_labels
 
