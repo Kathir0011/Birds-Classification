@@ -46,7 +46,8 @@ title = "Birds Classifier 🪶"
 description = "Classifies an Image of a Bird to any one of the [510 species](https://huggingface.co/spaces/Kathir0011/Birds_Classification/blob/main/class_names.txt)."
 article = "Other Projects:\n"\
 "💰 [US Health Insurance Cost Prediction](http://health-insurance-cost-predictor-k19.streamlit.app/)\n"\
-"📰 [Fake News Detector](https://fake-news-detector-k19.streamlit.app/)"
+"📰 [Fake News Detector](https://fake-news-detector-k19.streamlit.app/)\n"\
+"🧑‍💻 [YouTube Video Assistant](https://huggingface.co/spaces/Kathir0011/YouTube_Video_Assistant)"
 # creating examples list
 examples_list = [["examples/" + img] for img in os.listdir("examples")]
 
